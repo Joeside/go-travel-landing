@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Go-Travel.ca | Voyage, nomadisme numérique & domaine à vendre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Go-Travel.ca – Un nom de domaine court et mémorable pour un projet de voyage, blog, comparateur ou plateforme de nomades numériques. Domaine .ca à vendre."
+  />
+
+  <!-- SEO de base -->
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Go-Travel.ca – Domaine de voyage à vendre" />
+  <meta
+    property="og:description"
+    content="Un nom de domaine idéal pour un blog de voyage, une plateforme de nomadisme numérique ou un projet touristique au Canada."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://go-travel.ca" />
+
+  <!-- Font + Style simple -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #050814;
+      --bg-soft: #0f172a;
+      --accent: #06b6d4;
+      --accent-soft: rgba(56, 189, 248, 0.15);
+      --accent-strong: #0ea5e9;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --badge: #22c55e;
+      --border-soft: rgba(148, 163, 184, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #0b1120 0, #020617 45%, #000 100%);
+      color: var(--text-main);
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .page {
+      max-width: 960px;
+      width: 100%;
+      margin: auto;
+      border-radius: 24px;
+      background: linear-gradient(
+          135deg,
+          rgba(15, 23, 42, 0.95),
+          rgba(8, 47, 73, 0.95)
+        );
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow:
+        0 24px 60px rgba(15, 23, 42, 0.9),
+        0 0 0 1px rgba(15, 23, 42, 0.9);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #e5fffd, #22c55e 25%, #0ea5e9 70%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0f172a;
+      font-weight: 700;
+      font-size: 20px;
+      box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.9);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-title {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .brand-domain {
+      font-size: 15px;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .badge-for-sale {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(22, 163, 74, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.5);
+      font-size: 12px;
+      color: #bbf7d0;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.35);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+      gap: 24px;
+      padding: 24px 24px 28px;
+    }
+
+    @media (max-width: 800px) {
+      body {
+        padding: 16px;
+      }
+      main {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .hero-kicker {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-strong);
+      font-weight: 600;
+    }
+
+    .hero-title {
+      font-size: clamp(26px, 3.1vw, 32px);
+      line-height: 1.15;
+      font-weight: 700;
+    }
+
+    .hero-title span {
+      background: linear-gradient(120deg, #22c55e, #0ea5e9);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 46rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.75);
+      color: #e5e7eb;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .btn-main,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 500;
+      border: 1px solid transparent;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out,
+        background 0.12s ease-out, border-color 0.12s ease-out;
+      white-space: nowrap;
+    }
+
+    .btn-main {
+      background: linear-gradient(135deg, #22c55e, #0ea5e9);
+      color: #022c22;
+      box-shadow:
+        0 14px 40px rgba(34, 197, 94, 0.38),
+        0 0 0 1px rgba(15, 23, 42, 0.75);
+    }
+
+    .btn-main:hover {
+      transform: translateY(-1px);
+      box-shadow:
+        0 20px 50px rgba(34, 197, 94, 0.5),
+        0 0 0 1px rgba(15, 23, 42, 0.9);
+    }
+
+    .btn-secondary {
+      background: rgba(15, 23, 42, 0.9);
+      border-color: rgba(148, 163, 184, 0.7);
+      color: #e5e7eb;
+    }
+
+    .btn-secondary:hover {
+      border-color: #e5e7eb;
+      background: rgba(15, 23, 42, 1);
+      transform: translateY(-1px);
+    }
+
+    .btn-pill-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+    }
+
+    .section {
+      margin-top: 10px;
+      padding-top: 12px;
+      border-top: 1px dashed rgba(148, 163, 184, 0.4);
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .section-text {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .section-list {
+      margin-top: 6px;
+      padding-left: 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+      display: grid;
+      gap: 3px;
+    }
+
+    .section-list li::marker {
+      color: var(--accent-strong);
+    }
+
+    .sidebar {
+      border-radius: 18px;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      background: radial-gradient(circle at top left, #1e293b 0, #020617 60%);
+      padding: 16px 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sidebar::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.2), transparent 60%),
+        radial-gradient(circle at 100% 0, rgba(34, 197, 94, 0.16), transparent 55%);
+      opacity: 0.9;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .sidebar-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .sidebar-label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #bae6fd;
+      margin-bottom: 4px;
+    }
+
+    .sidebar-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .sidebar-subtitle {
+      font-size: 13px;
+      color: #e5e7eb;
+      margin-bottom: 6px;
+    }
+
+    .value-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 8px 0 10px;
+    }
+
+    .pill {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      color: #e5e7eb;
+      white-space: nowrap;
+    }
+
+    .value-list {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: grid;
+      gap: 4px;
+      margin-bottom: 10px;
+    }
+
+    .value-list strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .contact-box {
+      padding: 10px 11px;
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 12px;
+      color: var(--text-muted);
+      display: grid;
+      gap: 4px;
+    }
+
+    .contact-box a {
+      color: #7dd3fc;
+      text-decoration: none;
+      font-weight: 500;
+      word-break: break-all;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      padding: 10px 24px 14px;
+      border-top: 1px solid var(--border-soft);
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .footer-small {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="brand-logo">G</div>
+        <div class="brand-text">
+          <div class="brand-title">Nom de domaine premium</div>
+          <div class="brand-domain">Go-Travel.ca</div>
+        </div>
+      </div>
+      <div class="badge-for-sale">
+        <span class="badge-dot"></span>
+        Domaine .ca à vendre
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <div class="hero-kicker">Voyage & nomadisme numérique</div>
+          <h1 class="hero-title">
+            Le futur hub des
+            <span>voyageurs et nomades numériques</span>.
+          </h1>
+        </div>
+
+        <p class="hero-subtitle">
+          <strong>Go-Travel.ca</strong> est un nom de domaine court, mémorable et
+          facile à prononcer en français comme en anglais — idéal pour un blog de
+          voyage, un comparateur de billets, une agence en ligne ou une plateforme
+          dédiée aux travailleurs à l'étranger et nomades numériques.
+        </p>
+
+        <div class="hero-tags">
+          <span class="tag">Blog de voyage</span>
+          <span class="tag">Nomadisme numérique</span>
+          <span class="tag">Tourisme &amp; Canada</span>
+          <span class="tag">Remote work</span>
+          <span class="tag">Marque forte &amp; mémorable</span>
+        </div>
+
+        <div class="hero-actions">
+          <a
+            class="btn-main"
+            href="mailto:jonathan.cote.pro@outlook.com?subject=Offre%20pour%20le%20domaine%20Go-Travel.ca"
+          >
+            Faire une offre pour Go-Travel.ca
+          </a>
+          <a
+            class="btn-secondary"
+            href="#details-domaine"
+          >
+            Voir le potentiel du domaine
+          </a>
+        </div>
+
+        <div class="section" id="details-domaine">
+          <h2 class="section-title">Pourquoi Go-Travel.ca est un excellent nom&nbsp;?</h2>
+          <p class="section-text">
+            Ce domaine combine un verbe d'action simple (<em>go</em>) avec un mot
+            universel (<em>travel</em>), ce qui le rend parfait pour un projet
+            international tout en étant ancré au Canada grâce à l'extension
+            <strong>.ca</strong>.
+          </p>
+          <ul class="section-list">
+            <li>Facile à retenir, à taper et à prononcer.</li>
+            <li>Idéal pour une audience canadienne ou francophone qui voyage.</li>
+            <li>Convient à une marque moderne, à une plateforme ou à une communauté.</li>
+            <li>Utilisable autant en français qu'en anglais (bilingue friendly).</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">Idées de projets possibles</h2>
+          <p class="section-text">
+            Voici quelques directions que pourrait prendre un projet bâti sur
+            <strong>Go-Travel.ca</strong> :
+          </p>
+          <ul class="section-list">
+            <li>Blog ou magazine de voyage (guides par pays, itinéraires, conseils).</li>
+            <li>Plateforme pour nomades numériques et travail à l'étranger.</li>
+            <li>Comparateur d'hébergements, vols ou assurances voyage.</li>
+            <li>Agence spécialisée dans les séjours à long terme ou le slow travel.</li>
+            <li>Communauté ou espace membres pour travailleurs à distance au Canada.</li>
+          </ul>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <div class="sidebar-inner">
+          <div class="sidebar-label">Domain insights</div>
+          <h2 class="sidebar-title">Go-Travel.ca est disponible à l'achat</h2>
+          <p class="sidebar-subtitle">
+            Un nom de domaine prêt à devenir une marque forte dans l'univers du
+            voyage et du nomadisme numérique.
+          </p>
+
+          <div class="value-pills">
+            <span class="pill">.ca – ciblage Canada</span>
+            <span class="pill">Nom court &amp; dynamique</span>
+            <span class="pill">Idéal SEO “travel”</span>
+            <span class="pill">Marque bilingue</span>
+          </div>
+
+          <div class="value-list">
+            <div>
+              <strong>Type&nbsp;:</strong> domaine de marque pour projet web (blog,
+              SaaS, plateforme, agence).
+            </div>
+            <div>
+              <strong>Public cible&nbsp;:</strong> voyageurs, expatriés, nomades
+              numériques, travailleurs à distance.
+            </div>
+            <div>
+              <strong>Positionnement&nbsp;:</strong> moderne, accessible,
+              orienté action (&laquo; go &raquo;).
+            </div>
+          </div>
+
+          <div class="contact-box">
+            <div><strong>Intéressé par ce domaine&nbsp;?</strong></div>
+            <div>
+              Pour toute question ou pour soumettre une offre d'achat sérieuse,
+              écrivez à&nbsp;:
+            </div>
+            <div>
+              <a href="mailto:jonathan.cote.pro@outlook.com?subject=Offre%20pour%20le%20domaine%20Go-Travel.ca">
+                jonathan.cote.pro@outlook.com
+              </a>
+            </div>
+            <div class="footer-small">
+              Merci de préciser le contexte de votre projet et votre offre
+              approximative dans votre message.
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div>
+        © <span id="year"></span> Go-Travel.ca — Nom de domaine disponible à la vente.
+      </div>
+      <div class="footer-small">
+        EN · This premium .ca travel domain is available for acquisition. Contact for offers.
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Met automatiquement l'année en cours dans le footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
