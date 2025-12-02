@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Go-Travel.ca – Explorer le monde</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background:
+                radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.08), transparent 55%),
+                radial-gradient(circle at 100% 0, rgba(255, 255, 255, 0.08), transparent 55%),
+                linear-gradient(180deg, #0f172a 0%, #1d3557 35%, #457b9d 60%, #f4a261 85%, #fefae0 100%);
+            color: #0f172a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+        }
+
+        .wrapper {
+            max-width: 960px;
+            margin: auto;
+            background: rgba(248, 250, 252, 0.96);
+            border-radius: 20px;
+            box-shadow:
+                0 24px 60px rgba(15, 23, 42, 0.8),
+                0 0 0 1px rgba(15, 23, 42, 0.8);
+            overflow: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 20px;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.5);
+            background: linear-gradient(90deg, #0f172a, #1e293b);
+            color: #e5e7eb;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #fefae0, #f4a261, #e76f51);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 18px;
+            color: #1f2933;
+            box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.9);
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .brand-title {
+            font-size: 11px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #9ca3af;
+        }
+
+        .brand-domain {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .header-links a {
+            color: #e5e7eb;
+            font-size: 13px;
+            text-decoration: none;
+            margin-left: 16px;
+        }
+
+        .header-links a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 24px 22px 28px;
+        }
+
+        .hero {
+            margin-bottom: 20px;
+        }
+
+        .kicker {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: #0f766e;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        h1 {
+            font-size: clamp(26px, 3vw, 32px);
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
+
+        .hero p {
+            font-size: 14px;
+            color: #4b5563;
+            line-height: 1.6;
+            max-width: 680px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 640px) {
+            .grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        .card {
+            background: white;
+            border-radius: 14px;
+            padding: 14px 14px 16px;
+            border: 1px solid rgba(148, 163, 184, 0.7);
+            box-shadow: 0 10px 26px rgba(148, 163, 184, 0.5);
+        }
+
+        .card-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .card-title span.icon {
+            font-size: 16px;
+        }
+
+        .card-text {
+            font-size: 13px;
+            color: #4b5563;
+            line-height: 1.5;
+        }
+
+        .section-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-top: 26px;
+            margin-bottom: 8px;
+        }
+
+        .list {
+            font-size: 13px;
+            color: #4b5563;
+            line-height: 1.6;
+            max-width: 720px;
+        }
+
+        .list li {
+            margin-left: 18px;
+            margin-bottom: 4px;
+        }
+
+        .list li::marker {
+            color: #f97316;
+        }
+
+        .secondary-note {
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 12px;
+            max-width: 720px;
+        }
+
+        footer {
+            border-top: 1px solid rgba(148, 163, 184, 0.5);
+            padding: 10px 18px 14px;
+            font-size: 11px;
+            color: #6b7280;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 6px;
+            background: rgba(248, 250, 252, 0.96);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="brand">
+                <div class="logo">G</div>
+                <div class="brand-text">
+                    <div class="brand-title">Mini site</div>
+                    <div class="brand-domain">Go-Travel.ca</div>
+                </div>
+            </div>
+            <div class="header-links">
+                <a href="/">Retour à la page d’accueil</a>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="kicker">Inspiration voyage</div>
+                <h1>Explorer le monde, une décision à la fois</h1>
+                <p>
+                    Go-Travel.ca est pensé pour les personnes qui rêvent de partir plus souvent, plus longtemps,
+                    ou même de travailler à l’étranger comme nomade numérique. Voici quelques pistes pour faire
+                    évoluer un simple projet de voyage en véritable style de vie.
+                </p>
+            </section>
+
+            <section class="grid">
+                <article class="card">
+                    <h2 class="card-title"><span class="icon">🌍</span>Slow travel</h2>
+                    <p class="card-text">
+                        Voyager moins souvent, mais plus longtemps. En restant plusieurs semaines au même endroit,
+                        on découvre vraiment le quotidien local&nbsp;: marchés, cafés de quartier, habitudes du matin.
+                        C’est aussi une façon de réduire l’empreinte carbone de ses déplacements.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h2 class="card-title"><span class="icon">💻</span>Travailler à distance</h2>
+                    <p class="card-text">
+                        Beaucoup d’emplois se prêtent au télétravail&nbsp;: analyse de données, développement web,
+                        rédaction, support à distance, marketing numérique… Avec une bonne connexion internet
+                        et un horaire adapté, il est possible de concilier travail sérieux et changement de décor.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h2 class="card-title"><span class="icon">🏡</span>Choisir la bonne base</h2>
+                    <p class="card-text">
+                        Certains pays sont particulièrement attractifs pour les séjours prolongés&nbsp;:
+                        coût de la vie abordable, climat agréable, communauté d’expatriés, qualité des services.
+                        L’important est de trouver un endroit où l’on se sent à la fois dépaysé et en sécurité.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h2 class="card-title"><span class="icon">🧳</span>Voyager léger</h2>
+                    <p class="card-text">
+                        Une valise bien préparée simplifie tout&nbsp;: quelques vêtements polyvalents, un bon sac
+                        à dos pour les déplacements, un ordinateur fiable et les essentiels de travail.
+                        Voyager léger permet de bouger plus facilement d’un logement à l’autre.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h2 class="card-title"><span class="icon">🤝</span>Créer des liens</h2>
+                    <p class="card-text">
+                        Les plus beaux souvenirs ne viennent pas seulement des paysages, mais aussi des rencontres.
+                        Espaces de coworking, cours de langue, activités locales et groupes en ligne sont d’excellents
+                        moyens de sortir de l’isolement en voyage.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h2 class="card-title"><span class="icon">📅</span>Planifier sans tout figer</h2>
+                    <p class="card-text">
+                        Une bonne approche consiste à réserver les premières semaines (logement, assurance, billets)
+                        tout en laissant des zones “flexibles” pour adapter son trajet aux coups de cœur, aux conseils
+                        reçus et aux opportunités qui se présentent sur place.
+                    </p>
+                </article>
+            </section>
+
+            <section>
+                <h2 class="section-title">Quelques idées de contenu que pourrait accueillir Go-Travel.ca</h2>
+                <ul class="list">
+                    <li>Des guides pratiques pour préparer un séjour longue durée ou un “workation”.</li>
+                    <li>Des comparatifs de destinations selon le coût de la vie, la qualité d’internet et la sécurité.
+                    </li>
+                    <li>Des témoignages de personnes qui ont adopté un mode de vie nomade ou semi-nomade.</li>
+                    <li>Des ressources pour trouver des logements adaptés au télétravail (wifi fiable, espace de
+                        travail, etc.).</li>
+                    <li>Des conseils pour concilier obligations professionnelles, vie de famille et projets de voyage.
+                    </li>
+                </ul>
+                <p class="secondary-note">
+                    Ce mini site n’est qu’un aperçu du potentiel que pourrait développer Go-Travel.ca entre les mains
+                    d’une entreprise, d’un créateur de contenu ou d’un projet de startup.
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <div>© <span id="year"></span> Go-Travel.ca</div>
+            <div>Mini site d’exemple – contenu statique, sans entretien.</div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
