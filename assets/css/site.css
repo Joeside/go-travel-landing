@@ -1,0 +1,403 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.08), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(255, 255, 255, 0.08), transparent 55%),
+        linear-gradient(180deg, #0f172a 0%, #1d3557 35%, #457b9d 60%, #f4a261 85%, #fefae0 100%);
+    color: #111827;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    padding: 16px;
+}
+
+.bg-motif {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.16;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.7) 1px, transparent 0),
+        radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.5) 1px, transparent 0),
+        radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.35) 1px, transparent 0);
+    background-size: 120px 120px;
+}
+
+.bg-planes {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.16);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    z-index: 0;
+}
+
+.bg-planes span {
+    transform: rotate(-15deg);
+    text-shadow: 0 6px 16px rgba(15, 23, 42, 0.7);
+}
+
+.wrapper {
+    max-width: 860px;
+    margin: auto;
+    background: rgba(248, 250, 252, 0.96);
+    border-radius: 20px;
+    box-shadow:
+        0 24px 60px rgba(15, 23, 42, 0.8),
+        0 0 0 1px rgba(15, 23, 42, 0.8);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+/* HEADER COMMUN */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.5);
+    background: linear-gradient(90deg, #0f172a, #1e293b);
+    color: #e5e7eb;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #fefae0, #f4a261, #e76f51);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 20px;
+    color: #1f2933;
+    box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.9);
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.brand-title {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #9ca3af;
+}
+
+.brand-domain {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.lang-toggle {
+    background: rgba(15, 23, 42, 0.1);
+    border-radius: 999px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+}
+
+.lang-toggle button {
+    border: none;
+    background: transparent;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    cursor: pointer;
+    color: #cbd5f5;
+}
+
+.lang-toggle button.active {
+    background: #f9fafb;
+    color: #111827;
+    font-weight: 600;
+}
+
+/* LAYOUT PRINCIPAL */
+
+main {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+    gap: 24px;
+    padding: 24px 24px 28px;
+}
+
+@media (max-width: 800px) {
+    main {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.hero {
+    text-align: left;
+}
+
+.kicker {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #0f766e;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+h1 {
+    font-size: clamp(26px, 3vw, 32px);
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+.hero p {
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 12px 0 18px;
+}
+
+.tag {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #e5f3ff;
+    color: #1f2933;
+    border: 1px solid #bfdbfe;
+}
+
+.btn-main {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 18px;
+    background: linear-gradient(135deg, #f4a261, #e76f51);
+    color: #111827;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    box-shadow: 0 10px 26px rgba(148, 163, 184, 0.8);
+    cursor: pointer;
+}
+
+.btn-main:hover {
+    filter: brightness(1.03);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 6px;
+    padding: 8px 14px;
+    background: #e5e7eb;
+    color: #111827;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 13px;
+    border: 1px solid rgba(148, 163, 184, 0.8);
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background: #d4d4d8;
+}
+
+.section-title {
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 14px;
+    margin-bottom: 4px;
+    color: #111827;
+}
+
+.section-list {
+    font-size: 13px;
+    color: #4b5563;
+    padding-left: 18px;
+    margin-top: 4px;
+}
+
+.section-list li {
+    margin-bottom: 4px;
+}
+
+.section-list li::marker {
+    color: #f97316;
+}
+
+/* SIDEBAR (CONTACT + FORM) */
+
+.sidebar {
+    background: linear-gradient(135deg, #e0f4ff, #fefae0);
+    border-radius: 18px;
+    padding: 16px 16px 18px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background:
+        radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.3), transparent 60%),
+        radial-gradient(circle at 100% 0, rgba(248, 180, 0, 0.25), transparent 55%);
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.sidebar-inner {
+    position: relative;
+    z-index: 1;
+}
+
+.sidebar-label {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #0369a1;
+    margin-bottom: 4px;
+}
+
+.sidebar-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #0f172a;
+}
+
+.sidebar-text {
+    font-size: 13px;
+    color: #374151;
+    margin-bottom: 10px;
+}
+
+.contact-box {
+    margin-top: 8px;
+    padding: 10px 10px 12px;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, 0.8);
+    font-size: 12px;
+    color: #4b5563;
+}
+
+.contact-box a {
+    color: #0369a1;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.contact-box a:hover {
+    text-decoration: underline;
+}
+
+.form {
+    margin-top: 12px;
+    display: grid;
+    gap: 8px;
+}
+
+.form-row {
+    display: grid;
+    gap: 4px;
+}
+
+.form-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #111827;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid rgba(148, 163, 184, 0.9);
+    padding: 7px 9px;
+    font-size: 13px;
+    font-family: inherit;
+    outline: none;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 1px rgba(14, 165, 233, 0.3);
+}
+
+.form-textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.form-submit {
+    margin-top: 6px;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 999px;
+    border: none;
+    background: linear-gradient(135deg, #0ea5e9, #22c55e);
+    color: #0f172a;
+    cursor: pointer;
+}
+
+.form-submit:hover {
+    filter: brightness(1.03);
+    transform: translateY(-0.5px);
+}
+
+.form-note {
+    font-size: 11px;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+/* FOOTER COMMUN */
+
+footer {
+    border-top: 1px solid rgba(148, 163, 184, 0.5);
+    padding: 10px 18px 14px;
+    font-size: 11px;
+    color: #6b7280;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px;
+    background: rgba(248, 250, 252, 0.96);
+}
