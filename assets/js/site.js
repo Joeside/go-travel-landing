@@ -1,4 +1,4 @@
-// Année dans le footer (si présent)
+// Année
 (function () {
     const yearEl = document.getElementById("year");
     if (yearEl) {
@@ -6,7 +6,7 @@
     }
 })();
 
-// Email + mailto obfusqués + formulaires (si présents sur la page)
+// Email & mailto + formulaires + bouton nav
 (function () {
     const user = "domain";
     const host = "go-travel.ca";
@@ -18,27 +18,29 @@
     const mailtoFR = `mailto:${email}?subject=${encodeURIComponent(subjectFR)}`;
     const mailtoEN = `mailto:${email}?subject=${encodeURIComponent(subjectEN)}`;
 
-    // Boutons "Faire une offre" / "Make an offer"
+    // Boutons dans le hero
     const offerFR = document.getElementById("offer-link-fr");
-    if (offerFR) {
-        offerFR.setAttribute("href", mailtoFR);
-    }
+    if (offerFR) offerFR.setAttribute("href", mailtoFR);
 
     const offerEN = document.getElementById("offer-link-en");
-    if (offerEN) {
-        offerEN.setAttribute("href", mailtoEN);
+    if (offerEN) offerEN.setAttribute("href", mailtoEN);
+
+    // Bouton dans le header
+    const navOffer = document.getElementById("nav-offer");
+    if (navOffer) {
+        navOffer.addEventListener("click", function () {
+            window.location.href = mailtoFR;
+        });
     }
 
     // Liens email texte
     const emailLinks = document.querySelectorAll(".js-email");
-    if (emailLinks.length) {
-        emailLinks.forEach((link) => {
-            link.textContent = email;
-            link.setAttribute("href", mailtoFR);
-        });
-    }
+    emailLinks.forEach((link) => {
+        link.textContent = email;
+        link.setAttribute("href", mailtoFR);
+    });
 
-    // Gestion des formulaires (si présents) : ouvre un mailto prérempli
+    // Formulaires
     function attachForm(form, isFR) {
         if (!form) return;
         form.addEventListener("submit", function (e) {
@@ -76,7 +78,7 @@
     attachForm(document.getElementById("contact-form-en"), false);
 })();
 
-// Toggle FR / EN (si les éléments existent)
+// Toggle FR / EN
 (function () {
     const btnFr = document.getElementById("btn-fr");
     const btnEn = document.getElementById("btn-en");
