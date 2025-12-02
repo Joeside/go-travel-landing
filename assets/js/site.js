@@ -87,23 +87,40 @@
     const contactFr = document.getElementById("contact-fr");
     const contactEn = document.getElementById("contact-en");
 
-    if (!btnFr || !btnEn || !heroFr || !heroEn || !contactFr || !contactEn) return;
+    // On exige seulement les boutons + blocs hero
+    if (!btnFr || !btnEn || !heroFr || !heroEn) return;
 
-    btnFr.addEventListener("click", function () {
+    function showFr() {
         btnFr.classList.add("active");
         btnEn.classList.remove("active");
+
         heroFr.style.display = "block";
         heroEn.style.display = "none";
-        contactFr.style.display = "block";
-        contactEn.style.display = "none";
-    });
 
-    btnEn.addEventListener("click", function () {
+        // Si les blocs contact existent sur la page, on les bascule aussi
+        if (contactFr && contactEn) {
+            contactFr.style.display = "block";
+            contactEn.style.display = "none";
+        }
+    }
+
+    function showEn() {
         btnEn.classList.add("active");
         btnFr.classList.remove("active");
+
         heroEn.style.display = "block";
         heroFr.style.display = "none";
-        contactEn.style.display = "block";
-        contactFr.style.display = "none";
-    });
+
+        if (contactFr && contactEn) {
+            contactEn.style.display = "block";
+            contactFr.style.display = "none";
+        }
+    }
+
+    btnFr.addEventListener("click", showFr);
+    btnEn.addEventListener("click", showEn);
+
+    // État initial
+    showFr();
 })();
+

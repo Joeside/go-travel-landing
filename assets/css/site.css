@@ -111,10 +111,13 @@ body {
     background: #0f172a;
     color: #f9fafb;
     cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .nav-cta:hover {
     background: #111827;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.25);
 }
 
 .lang-toggle {
