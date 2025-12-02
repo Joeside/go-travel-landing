@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Go-Travel.ca – Explorer le monde</title>
+    <title>Go-Travel.ca – Mini magazine de voyage</title>
     <style>
         * {
             box-sizing: border-box;
@@ -100,7 +100,7 @@
         }
 
         .hero {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .kicker {
@@ -122,13 +122,13 @@
             font-size: 14px;
             color: #4b5563;
             line-height: 1.6;
-            max-width: 680px;
+            max-width: 720px;
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 14px;
+            gap: 16px;
             margin-top: 24px;
         }
 
@@ -150,6 +150,9 @@
             padding: 14px 14px 16px;
             border: 1px solid rgba(148, 163, 184, 0.7);
             box-shadow: 0 10px 26px rgba(148, 163, 184, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card-title {
@@ -169,36 +172,18 @@
             font-size: 13px;
             color: #4b5563;
             line-height: 1.5;
-        }
-
-        .section-title {
-            font-size: 15px;
-            font-weight: 600;
-            margin-top: 26px;
             margin-bottom: 8px;
         }
 
-        .list {
-            font-size: 13px;
-            color: #4b5563;
-            line-height: 1.6;
-            max-width: 720px;
-        }
-
-        .list li {
-            margin-left: 18px;
-            margin-bottom: 4px;
-        }
-
-        .list li::marker {
-            color: #f97316;
-        }
-
-        .secondary-note {
+        .card-link {
             font-size: 12px;
-            color: #6b7280;
-            margin-top: 12px;
-            max-width: 720px;
+            font-weight: 500;
+            color: #0369a1;
+            text-decoration: none;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
         }
 
         footer {
@@ -221,7 +206,7 @@
             <div class="brand">
                 <div class="logo">G</div>
                 <div class="brand-text">
-                    <div class="brand-title">Mini site</div>
+                    <div class="brand-title">Mini magazine</div>
                     <div class="brand-domain">Go-Travel.ca</div>
                 </div>
             </div>
@@ -233,92 +218,57 @@
         <main>
             <section class="hero">
                 <div class="kicker">Inspiration voyage</div>
-                <h1>Explorer le monde, une décision à la fois</h1>
+                <h1>Idées pour voyager plus, et mieux</h1>
                 <p>
-                    Go-Travel.ca est pensé pour les personnes qui rêvent de partir plus souvent, plus longtemps,
-                    ou même de travailler à l’étranger comme nomade numérique. Voici quelques pistes pour faire
-                    évoluer un simple projet de voyage en véritable style de vie.
+                    Ce mini site propose quelques pistes de réflexion sur le voyage, le slow travel
+                    et la possibilité de travailler à distance tout en explorant le monde. Le contenu
+                    est volontairement simple et statique&nbsp;: il sert de démonstration pour le
+                    potentiel de Go-Travel.ca.
                 </p>
             </section>
 
             <section class="grid">
                 <article class="card">
-                    <h2 class="card-title"><span class="icon">🌍</span>Slow travel</h2>
+                    <h2 class="card-title">
+                        <span class="icon">🌍</span>
+                        <span>Découvrir le slow travel</span>
+                    </h2>
                     <p class="card-text">
-                        Voyager moins souvent, mais plus longtemps. En restant plusieurs semaines au même endroit,
-                        on découvre vraiment le quotidien local&nbsp;: marchés, cafés de quartier, habitudes du matin.
-                        C’est aussi une façon de réduire l’empreinte carbone de ses déplacements.
+                        Voyager moins souvent, mais plus longtemps. Prendre le temps de vivre
+                        réellement dans un nouvel environnement plutôt que simplement “passer”.
                     </p>
+                    <a class="card-link" href="/articles/slow-travel.html">Lire l’article</a>
                 </article>
 
                 <article class="card">
-                    <h2 class="card-title"><span class="icon">💻</span>Travailler à distance</h2>
+                    <h2 class="card-title">
+                        <span class="icon">💻</span>
+                        <span>Travailler à distance à l’étranger</span>
+                    </h2>
                     <p class="card-text">
-                        Beaucoup d’emplois se prêtent au télétravail&nbsp;: analyse de données, développement web,
-                        rédaction, support à distance, marketing numérique… Avec une bonne connexion internet
-                        et un horaire adapté, il est possible de concilier travail sérieux et changement de décor.
+                        Télétravail, nomadisme numérique, séjours prolongés&nbsp;: comment transformer
+                        un emploi flexible en opportunité de découvrir d’autres pays.
                     </p>
+                    <a class="card-link" href="/articles/travailler-a-distance.html">Lire l’article</a>
                 </article>
 
                 <article class="card">
-                    <h2 class="card-title"><span class="icon">🏡</span>Choisir la bonne base</h2>
+                    <h2 class="card-title">
+                        <span class="icon">🏝</span>
+                        <span>Choisir sa première destination</span>
+                    </h2>
                     <p class="card-text">
-                        Certains pays sont particulièrement attractifs pour les séjours prolongés&nbsp;:
-                        coût de la vie abordable, climat agréable, communauté d’expatriés, qualité des services.
-                        L’important est de trouver un endroit où l’on se sent à la fois dépaysé et en sécurité.
+                        Coût de la vie, climat, internet, sécurité&nbsp;: quelques critères simples
+                        pour choisir une première destination adaptée au travail à distance.
                     </p>
+                    <a class="card-link" href="/articles/choisir-destination.html">Lire l’article</a>
                 </article>
-
-                <article class="card">
-                    <h2 class="card-title"><span class="icon">🧳</span>Voyager léger</h2>
-                    <p class="card-text">
-                        Une valise bien préparée simplifie tout&nbsp;: quelques vêtements polyvalents, un bon sac
-                        à dos pour les déplacements, un ordinateur fiable et les essentiels de travail.
-                        Voyager léger permet de bouger plus facilement d’un logement à l’autre.
-                    </p>
-                </article>
-
-                <article class="card">
-                    <h2 class="card-title"><span class="icon">🤝</span>Créer des liens</h2>
-                    <p class="card-text">
-                        Les plus beaux souvenirs ne viennent pas seulement des paysages, mais aussi des rencontres.
-                        Espaces de coworking, cours de langue, activités locales et groupes en ligne sont d’excellents
-                        moyens de sortir de l’isolement en voyage.
-                    </p>
-                </article>
-
-                <article class="card">
-                    <h2 class="card-title"><span class="icon">📅</span>Planifier sans tout figer</h2>
-                    <p class="card-text">
-                        Une bonne approche consiste à réserver les premières semaines (logement, assurance, billets)
-                        tout en laissant des zones “flexibles” pour adapter son trajet aux coups de cœur, aux conseils
-                        reçus et aux opportunités qui se présentent sur place.
-                    </p>
-                </article>
-            </section>
-
-            <section>
-                <h2 class="section-title">Quelques idées de contenu que pourrait accueillir Go-Travel.ca</h2>
-                <ul class="list">
-                    <li>Des guides pratiques pour préparer un séjour longue durée ou un “workation”.</li>
-                    <li>Des comparatifs de destinations selon le coût de la vie, la qualité d’internet et la sécurité.
-                    </li>
-                    <li>Des témoignages de personnes qui ont adopté un mode de vie nomade ou semi-nomade.</li>
-                    <li>Des ressources pour trouver des logements adaptés au télétravail (wifi fiable, espace de
-                        travail, etc.).</li>
-                    <li>Des conseils pour concilier obligations professionnelles, vie de famille et projets de voyage.
-                    </li>
-                </ul>
-                <p class="secondary-note">
-                    Ce mini site n’est qu’un aperçu du potentiel que pourrait développer Go-Travel.ca entre les mains
-                    d’une entreprise, d’un créateur de contenu ou d’un projet de startup.
-                </p>
             </section>
         </main>
 
         <footer>
             <div>© <span id="year"></span> Go-Travel.ca</div>
-            <div>Mini site d’exemple – contenu statique, sans entretien.</div>
+            <div>Mini magazine statique – démonstration de contenu.</div>
         </footer>
     </div>
 
