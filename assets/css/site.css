@@ -645,3 +645,99 @@ body {
     border: 1px solid #e5e7eb;
     font-size: 13px;
 }
+
+/* ===== LISTE D'ARTICLES ===== */
+
+.article-list-header {
+    margin-top: 18px;
+    margin-bottom: 10px;
+}
+
+.article-list-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+.article-list-sub {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.article-list-grid {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+}
+
+/* On réutilise le style des mag-cards mais en liste verticale */
+
+.mag-card-mainlink {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
+}
+
+.mag-card-mainlink:hover .mag-card-title {
+    text-decoration: underline;
+}
+
+/* Pagination */
+
+.pagination {
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    flex-wrap: wrap;
+    font-size: 13px;
+}
+
+.pagination button,
+.pagination span,
+.pagination a {
+    border-radius: 999px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    padding: 4px 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #4b5563;
+}
+
+.pagination .is-current {
+    background: #0f172a;
+    color: #f9fafb;
+    border-color: #0f172a;
+    cursor: default;
+}
+
+.pagination .is-disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+/* ===== NAVIGATION PREV / NEXT ARTICLE ===== */
+
+.article-nav {
+    margin-top: 18px;
+    padding-top: 10px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 13px;
+    flex-wrap: wrap;
+}
+
+.article-nav a {
+    color: #0369a1;
+    text-decoration: none;
+}
+
+.article-nav a:hover {
+    text-decoration: underline;
+}

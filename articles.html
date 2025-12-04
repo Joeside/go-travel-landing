@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tous les articles | Go-Travel.ca</title>
+    <link rel="stylesheet" href="/assets/css/site.css" />
+</head>
+
+<body>
+    <div class="page">
+        <header class="site-header">
+            <div class="header-left">
+                <div class="logo">G</div>
+                <div class="brand-text">
+                    <div class="brand-title">Travel / Nomad lifestyle</div>
+                    <div class="brand-domain">Go-Travel.ca</div>
+                </div>
+                <span class="domain-badge">Domaine à vendre / Domain for sale</span>
+            </div>
+
+            <div class="header-right">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/">Accueil</a></li>
+                        <li><a href="/explore.html">Magazine</a></li>
+                        <li><a href="/articles.html">Articles</a></li>
+                    </ul>
+                </nav>
+                <button class="nav-cta" id="nav-offer">Faire une offre</button>
+                <div class="lang-toggle">
+                    <button id="btn-fr" class="active">FR</button>
+                    <button id="btn-en">EN</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="article-main">
+            <div class="article-list-header">
+                <h1 class="article-list-title">Tous les articles</h1>
+                <p class="article-list-sub">
+                    Une sélection de textes autour du slow travel, du travail à distance et des destinations
+                    propices à une vie plus nomade.
+                </p>
+            </div>
+
+            <section class="article-list-grid">
+                <!-- 1. Slow travel -->
+                <article class="mag-card">
+                    <a href="/articles/slow-travel.html" class="mag-card-mainlink">
+                        <div class="mag-card-image">
+                            <img src="/assets/images/card-slow-travel.jpg"
+                                alt="Voyageur marchant tranquillement dans une rue" />
+                        </div>
+                        <div class="mag-card-body">
+                            <div class="mag-card-category">Slow travel</div>
+                            <h2 class="mag-card-title">Voyager moins vite pour voyager mieux</h2>
+                            <p class="mag-card-excerpt">
+                                Pourquoi rester plus longtemps au même endroit change la façon dont on se souvient d’un
+                                voyage.
+                            </p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 2. Travailler à distance -->
+                <article class="mag-card">
+                    <a href="/articles/travailler-a-distance.html" class="mag-card-mainlink">
+                        <div class="mag-card-image">
+                            <img src="/assets/images/card-remote-work.jpg"
+                                alt="Personne travaillant dans un café lumineux" />
+                        </div>
+                        <div class="mag-card-body">
+                            <div class="mag-card-category">Nomadisme numérique</div>
+                            <h2 class="mag-card-title">Travailler à distance tout en voyageant</h2>
+                            <p class="mag-card-excerpt">
+                                Passer de “je travaille de chez moi” à “je travaille d’ailleurs” sans sacrifier sa
+                                collaboration
+                                ni sa productivité.
+                            </p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 3. Choisir une destination -->
+                <article class="mag-card">
+                    <a href="/articles/choisir-destination.html" class="mag-card-mainlink">
+                        <div class="mag-card-image">
+                            <img src="/assets/images/card-destination.jpg" alt="Carte et paysage vus de haut" />
+                        </div>
+                        <div class="mag-card-body">
+                            <div class="mag-card-category">Destinations</div>
+                            <h2 class="mag-card-title">Comment choisir sa première grande destination</h2>
+                            <p class="mag-card-excerpt">
+                                Fuseau horaire, budget, climat, langue&nbsp;: quelques critères concrets pour faire un
+                                premier choix réaliste.
+                            </p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 4. Costa Rica -->
+                <article class="mag-card">
+                    <a href="/articles/costa-rica-nomad.html" class="mag-card-mainlink">
+                        <div class="mag-card-image">
+                            <img src="/assets/images/card-costa-rica.jpg" alt="Plage et palmiers au Costa Rica" />
+                        </div>
+                        <div class="mag-card-body">
+                            <div class="mag-card-category">Costa Rica</div>
+                            <h2 class="mag-card-title">Vivre et travailler au Costa Rica en mode nomade</h2>
+                            <p class="mag-card-excerpt">
+                                À quoi ressemble un quotidien entre “pura vida”, appels vidéo et séances de travail face
+                                à la jungle.
+                            </p>
+                        </div>
+                    </a>
+                </article>
+            </section>
+
+            <!-- Pagination statique (1 seule page pour l’instant) -->
+            <nav class="pagination" aria-label="Pagination des articles">
+                <span class="is-disabled">«</span>
+                <span class="is-disabled">Précédent</span>
+                <span class="is-current">1</span>
+                <span class="is-disabled">2</span>
+                <span class="is-disabled">3</span>
+                <span class="is-disabled">Suivant</span>
+                <span class="is-disabled">»</span>
+            </nav>
+        </main>
+
+        <footer class="site-footer">
+            <div>© <span id="year"></span> Go-Travel.ca</div>
+            <div>Travel & nomad lifestyle – tous les articles en un seul endroit.</div>
+        </footer>
+    </div>
+
+    <script src="/assets/js/site.js" defer></script>
+</body>
+
+</html>
