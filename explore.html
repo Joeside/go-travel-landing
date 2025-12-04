@@ -5,276 +5,200 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Go-Travel.ca – Mini magazine de voyage</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background:
-                radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.08), transparent 55%),
-                radial-gradient(circle at 100% 0, rgba(255, 255, 255, 0.08), transparent 55%),
-                linear-gradient(180deg, #0f172a 0%, #1d3557 35%, #457b9d 60%, #f4a261 85%, #fefae0 100%);
-            color: #0f172a;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            padding: 16px;
-        }
-
-        .wrapper {
-            max-width: 960px;
-            margin: auto;
-            background: rgba(248, 250, 252, 0.96);
-            border-radius: 20px;
-            box-shadow:
-                0 24px 60px rgba(15, 23, 42, 0.8),
-                0 0 0 1px rgba(15, 23, 42, 0.8);
-            overflow: hidden;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 14px 20px;
-            border-bottom: 1px solid rgba(148, 163, 184, 0.5);
-            background: linear-gradient(90deg, #0f172a, #1e293b);
-            color: #e5e7eb;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, #fefae0, #f4a261, #e76f51);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 18px;
-            color: #1f2933;
-            box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.9);
-        }
-
-        .brand-text {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-        .brand-title {
-            font-size: 11px;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: #9ca3af;
-        }
-
-        .brand-domain {
-            font-size: 15px;
-            font-weight: 600;
-        }
-
-        .header-links a {
-            color: #e5e7eb;
-            font-size: 13px;
-            text-decoration: none;
-            margin-left: 16px;
-        }
-
-        .header-links a:hover {
-            text-decoration: underline;
-        }
-
-        main {
-            padding: 24px 22px 28px;
-        }
-
-        .hero {
-            margin-bottom: 22px;
-        }
-
-        .kicker {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.16em;
-            color: #0f766e;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        h1 {
-            font-size: clamp(26px, 3vw, 32px);
-            margin-bottom: 10px;
-            color: #0f172a;
-        }
-
-        .hero p {
-            font-size: 14px;
-            color: #4b5563;
-            line-height: 1.6;
-            max-width: 720px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 16px;
-            margin-top: 24px;
-        }
-
-        @media (max-width: 900px) {
-            .grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-
-        @media (max-width: 640px) {
-            .grid {
-                grid-template-columns: minmax(0, 1fr);
-            }
-        }
-
-        .card {
-            background: white;
-            border-radius: 14px;
-            padding: 14px 14px 16px;
-            border: 1px solid rgba(148, 163, 184, 0.7);
-            box-shadow: 0 10px 26px rgba(148, 163, 184, 0.5);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card-title {
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .card-title span.icon {
-            font-size: 16px;
-        }
-
-        .card-text {
-            font-size: 13px;
-            color: #4b5563;
-            line-height: 1.5;
-            margin-bottom: 8px;
-        }
-
-        .card-link {
-            font-size: 12px;
-            font-weight: 500;
-            color: #0369a1;
-            text-decoration: none;
-        }
-
-        .card-link:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            border-top: 1px solid rgba(148, 163, 184, 0.5);
-            padding: 10px 18px 14px;
-            font-size: 11px;
-            color: #6b7280;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 6px;
-            background: rgba(248, 250, 252, 0.96);
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/css/site.css" />
 </head>
 
 <body>
-    <div class="wrapper">
-        <header>
-            <div class="brand">
+    <div class="page">
+        <header class="site-header">
+            <div class="header-left">
                 <div class="logo">G</div>
                 <div class="brand-text">
-                    <div class="brand-title">Mini magazine</div>
+                    <div class="brand-title">Travel / Nomad lifestyle</div>
                     <div class="brand-domain">Go-Travel.ca</div>
                 </div>
+                <span class="domain-badge">Domaine à vendre / Domain for sale</span>
             </div>
-            <div class="header-links">
-                <a href="/">Retour à la page d’accueil</a>
+
+            <div class="header-right">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/">Accueil</a></li>
+                        <li><a href="/explore.html">Magazine</a></li>
+                    </ul>
+                </nav>
+                <button class="nav-cta" id="nav-offer">Faire une offre</button>
+                <div class="lang-toggle">
+                    <button id="btn-fr" class="active">FR</button>
+                    <button id="btn-en">EN</button>
+                </div>
             </div>
         </header>
 
         <main>
-            <section class="hero">
-                <div class="kicker">Inspiration voyage</div>
-                <h1>Idées pour voyager plus, et mieux</h1>
-                <p>
-                    Ce mini site propose quelques pistes de réflexion sur le voyage, le slow travel
-                    et la possibilité de travailler à distance tout en explorant le monde. Le contenu
-                    est volontairement simple et statique&nbsp;: il sert de démonstration pour le
-                    potentiel de Go-Travel.ca.
-                </p>
+            <!-- HERO MAGAZINE -->
+            <section class="hero-wrap">
+                <div class="hero-text-block">
+                    <div class="kicker">Mini magazine Go-Travel</div>
+                    <h1 class="hero-title">Inspiration voyage, slow travel et vie de nomade</h1>
+                    <p>
+                        Ce mini magazine a pour seul objectif de montrer le potentiel éditorial de
+                        <strong>Go-Travel.ca</strong>&nbsp;: guides, conseils pratiques, idées de destinations
+                        et réflexions sur le travail à distance à l’étranger.
+                    </p>
+                    <p>
+                        Le contenu est volontairement simple et statique&nbsp;: il démontre comment ce domaine
+                        pourrait devenir un véritable média de voyage moderne, avec une mise en page claire et
+                        des images fortes.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Articles de démonstration</span>
+                        <span class="tag">Slow travel</span>
+                        <span class="tag">Nomadisme numérique</span>
+                        <span class="tag">Destinations</span>
+                    </div>
+                    <h2 class="section-title">Thématiques couvertes par le mini magazine</h2>
+                    <ul class="section-list">
+                        <li>Voyager plus lentement et rester plus longtemps au même endroit.</li>
+                        <li>Organiser sa vie de télétravailleur ou de nomade numérique.</li>
+                        <li>Choisir des destinations adaptées au travail à distance.</li>
+                        <li>Préparer un changement de vie orienté voyage à long terme.</li>
+                    </ul>
+                </div>
+
+                <aside>
+                    <div class="hero-image-card">
+                        <div class="hero-image-wrapper">
+                            <img src="/assets/images/hero-tropical.jpg"
+                                alt="Plage tropicale, style magazine de voyage" />
+                        </div>
+                        <div class="hero-image-caption">
+                            Go-Travel.ca pourrait héberger un magazine riche en images&nbsp;: récits de voyage,
+                            guides de destinations, conseils pour télétravailler à l’étranger, etc.
+                        </div>
+                    </div>
+                </aside>
             </section>
 
-            <section class="grid">
-                <article class="card">
-                    <h2 class="card-title">
-                        <span class="icon">🌍</span>
-                        <span>Découvrir le slow travel</span>
-                    </h2>
-                    <p class="card-text">
-                        Voyager moins souvent, mais plus longtemps. Prendre le temps de vivre
-                        réellement dans un nouvel environnement plutôt que simplement “passer”.
-                    </p>
-                    <a class="card-link" href="/articles/slow-travel.html">Lire l’article</a>
-                </article>
+            <!-- SECTION ARTICLES -->
+            <section class="mag-section">
+                <div class="mag-section-header">
+                    <div>
+                        <div class="mag-section-title">Articles de démonstration</div>
+                        <div class="mag-section-sub">
+                            Quelques exemples de sujets que pourrait traiter un futur média Go-Travel.ca.
+                        </div>
+                    </div>
+                </div>
 
-                <article class="card">
-                    <h2 class="card-title">
-                        <span class="icon">💻</span>
-                        <span>Travailler à distance à l’étranger</span>
-                    </h2>
-                    <p class="card-text">
-                        Télétravail, nomadisme numérique, séjours prolongés&nbsp;: comment transformer
-                        un emploi flexible en opportunité de découvrir d’autres pays.
-                    </p>
-                    <a class="card-link" href="/articles/travailler-a-distance.html">Lire l’article</a>
-                </article>
+                <div class="mag-grid">
+                    <!-- Article 1 -->
+                    <article class="mag-card">
+                        <div class="mag-card-image">
+                            <img src="/assets/images/card-slow-travel.jpg"
+                                alt="Voyageur marchant dans une rue, style slow travel" />
+                        </div>
+                        <div class="mag-card-body">
+                            <div class="mag-card-category">Slow travel</div>
+                            <h2 class="mag-card-title">Voyager moins souvent, mais plus longtemps</h2>
+                            <p class="mag-card-excerpt">
+                                Quitter le mode “checklist de destinations” pour passer de vraies semaines
+                                dans un même quartier, apprendre les habitudes locales et ralentir le rythme.
+                            </p>
+                            <a href="/articles/slow-travel.html" class="mag-card-link">Lire l’article</a>
+                        </div>
+                    </article>
 
-                <article class="card">
-                    <h2 class="card-title">
-                        <span class="icon">🏝</span>
-                        <span>Choisir sa première destination</span>
-                    </h2>
-                    <p class="card-text">
-                        Coût de la vie, climat, internet, sécurité&nbsp;: quelques critères simples
-                        pour choisir une première destination adaptée au travail à distance.
-                    </p>
-                    <a class="card-link" href="/articles/choisir-destination.html">Lire l’article</a>
-                </article>
+                    <!-- Article 2 -->
+                    <article class="mag-card">
+                        <div class="mag-card-image">
+                            <img src="/assets/images/card-remote-work.jpg"
+                                alt="Personne travaillant sur un ordinateur dans un café lumineux" />
+                        </div>
+                        <div class="mag-card-body">
+                            <div class="mag-card-category">Nomadisme numérique</div>
+                            <h2 class="mag-card-title">Travailler à distance en voyage</h2>
+                            <p class="mag-card-excerpt">
+                                Transformer un emploi flexible en mode de vie nomade&nbsp;: outils, organisation,
+                                et limites à se fixer pour préserver l’équilibre.
+                            </p>
+                            <a href="/articles/travailler-a-distance.html" class="mag-card-link">Lire l’article</a>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="mag-card">
+                        <div class="mag-card-image">
+                            <img src="/assets/images/card-destination.jpg"
+                                alt="Carte et paysage de voyage vus de haut" />
+                        </div>
+                        <div class="mag-card-body">
+                            <div class="mag-card-category">Destinations</div>
+                            <h2 class="mag-card-title">Choisir sa première grande destination</h2>
+                            <p class="mag-card-excerpt">
+                                Coût de la vie, internet, sécurité, climat&nbsp;: quelques critères concrets pour
+                                faire un premier choix qui donne envie de repartir.
+                            </p>
+                            <a href="/articles/choisir-destination.html" class="mag-card-link">Lire l’article</a>
+                        </div>
+                    </article>
+
+                    <!-- Article 4 (placeholder) -->
+                    <article class="mag-card">
+                        <div class="mag-card-image">
+                            <!-- Tu pourras ajouter une image plus tard -->
+                        </div>
+                        <div class="mag-card-body">
+                            <div class="mag-card-category">Style de vie</div>
+                            <h2 class="mag-card-title">Vivre entre deux pays toute l’année</h2>
+                            <p class="mag-card-excerpt">
+                                Alterner entre un “chez soi” au pays et un point de chute au soleil&nbsp;:
+                                une façon réaliste de concilier stabilité et aventure.
+                            </p>
+                            <!-- Lien à ajouter si tu crées la page -->
+                        </div>
+                    </article>
+
+                    <!-- Article 5 (placeholder) -->
+                    <article class="mag-card">
+                        <div class="mag-card-image">
+                            <!-- Image à venir -->
+                        </div>
+                        <div class="mag-card-body">
+                            <div class="mag-card-category">Pratique</div>
+                            <h2 class="mag-card-title">Budgeter un projet de voyage à long terme</h2>
+                            <p class="mag-card-excerpt">
+                                Comprendre ses dépenses fixes, variables et les coûts cachés pour rendre un projet
+                                de voyage durable dans le temps.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Article 6 (placeholder) -->
+                    <article class="mag-card">
+                        <div class="mag-card-image">
+                            <!-- Image à venir -->
+                        </div>
+                        <div class="mag-card-body">
+                            <div class="mag-card-category">Remote work</div>
+                            <h2 class="mag-card-title">Travailler pour ici, vivre là-bas</h2>
+                            <p class="mag-card-excerpt">
+                                Garder un emploi basé dans son pays d’origine tout en profitant d’un coût de la vie
+                                plus bas ailleurs&nbsp;: rêve ou plan réaliste&nbsp;?
+                            </p>
+                        </div>
+                    </article>
+                </div>
             </section>
         </main>
 
-        <footer>
+        <footer class="site-footer">
             <div>© <span id="year"></span> Go-Travel.ca</div>
-            <div>Mini magazine statique – démonstration de contenu.</div>
+            <div>Mini magazine statique – démonstration éditoriale pour le domaine.</div>
         </footer>
     </div>
 
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+    <script src="/assets/js/site.js" defer></script>
 </body>
 
 </html>
